@@ -6,13 +6,13 @@
     command: docker stop docker-webapp-container
     ignore_errors: yes
 
-  - name: remove stopped docker container
-    command: docker rm docker-webapp-container
-    ignore_errors: yes
+#   - name: remove stopped docker container
+#     command: docker rm docker-webapp-container
+#     ignore_errors: yes
 
-  - name: remove docker image
-    command: docker rmi deraviyam/docker-webapp-image:latest
-    ignore_errors: yes
+#   - name: remove docker image
+#     command: docker rmi 2012388411/docker-webapp-image:latest
+#     ignore_errors: yes
 
 #  - name: building docker image
 #    command: docker build -t docker-webapp-image .
@@ -20,7 +20,7 @@
 #      chdir: /opt/docker
 
   - name: Pull docker image from dockerhub
-    command: docker pull deraviyam/docker-webapp-image:latest
+    command: docker pull 2012388411/docker-webapp-image:latest
 
   - name: create container using deraviyam/docker-webapp-image
     command: docker run -d --name docker-webapp-container -p 4000:8080 deraviyam/docker-webapp-image:latest
